@@ -135,7 +135,7 @@ export default {
 <template>
   <div
     class="z-10 rounded-t-lg p-20 bg-center h-80 text-right hover:scale-105 transition cursor-pointer"
-    :style="{ 'background-image': 'url(http://localhost:8055/assets/' + item.Image + ')' }"
+    :style="{ 'background-image': 'url(https://platypus-evolving-smoothly.ngrok-free.app/assets/' + item.Image + ')' }"
     @click="showRecipe(item.id)"
   ></div>
   <div class="z-20 flex justify-between h-36 mt-3">
