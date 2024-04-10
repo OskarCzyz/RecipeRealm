@@ -63,6 +63,7 @@ export default {
       class="px-32 text-right w-[500px]"
       :recipies_counter="recipies.length"
       :users_counter="users.length"
+      :latest_user="users[users.length - 1]?.username"
     />
   </div>
 </template>

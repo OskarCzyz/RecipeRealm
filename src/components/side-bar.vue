@@ -2,7 +2,8 @@
 export default {
   props: {
     recipies_counter: Number,
-    users_counter: Number
+    users_counter: Number,
+    latest_user: String
   }
 }
 </script>
@@ -14,6 +15,7 @@ export default {
       Forum statisics<br />
       Recipies: {{ recipies_counter }}<br />
       Members: {{ users_counter }}<br />
+      Latest user: {{ latest_user }}
     </p>
   </div>
 </template>
