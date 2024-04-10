@@ -57,7 +57,7 @@ export default {
     </div>
     <img
       class="scale-95"
-      :src="'http://localhost:8055/assets/' + recipies.Image"
+      :src="'https://platypus-evolving-smoothly.ngrok-free.app/assets/' + recipies.Image"
       alt="food image"
     />
     <p>Servings: {{ recipies.Servings }}</p>
