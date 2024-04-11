@@ -146,7 +146,7 @@ export default {
       <i
         @click="handleLike"
         :class="isLiked"
-        class="fas fa-heart fa-3x transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+        class="fas fa-heart fa-3x transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none rounded p-2"
         >&nbsp;{{ like_amount }}</i
       >
     </div>
