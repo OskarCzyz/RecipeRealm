@@ -143,7 +143,10 @@ export default {
   ></div>
   <div class="z-20 flex justify-between w-[280px] mt-3">
     <div class="z-20 flex justfiy-center">
-      <i @click="handleLike" :class="isLiked" class="fas fa-heart fa-3x transition duration-500"
+      <i
+        @click="handleLike"
+        :class="isLiked"
+        class="fas fa-heart fa-3x transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
         >&nbsp;{{ like_amount }}</i
       >
     </div>
