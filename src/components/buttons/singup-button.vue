@@ -1,5 +1,10 @@
 <template>
-  <button class="button__sign-up" @click="handleSignUp">Sign Up</button>
+  <button
+    class="bg-blue-500 text-white px-6 py-2 rounded font-medium mx-3 hover:bg-blue-600 transition duration-200 each-in-out"
+    @click="handleSignUp"
+  >
+    Sign Up
+  </button>
 </template>
 
 <script setup>
