@@ -146,6 +146,16 @@ export default {
       <i
         @click="handleLike"
         :class="isLiked"
+        style="
+          -moz-user-select: none;
+          -webkit-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          -o-user-select: none;
+        "
+        unselectable="on"
+        onselectstart="return false;"
+        onmousedown="return false;"
         class="fas fa-heart fa-3x transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none rounded p-2"
         >&nbsp;{{ like_amount }}</i
       >
