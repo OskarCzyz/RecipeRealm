@@ -56,7 +56,7 @@ export default {
       <img alt="profile pic" :src="author.picture" class="w-8 h-8 mx-4 rounded-full" />
     </div>
     <img
-      class="scale-95 max-h-96"
+      class="scale-95 max-h-96 rounded"
       :src="'https://platypus-evolving-smoothly.ngrok-free.app/assets/' + recipies.Image"
       alt="food image"
     />
