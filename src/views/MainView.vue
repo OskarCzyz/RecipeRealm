@@ -54,8 +54,12 @@ export default {
   />
   <div class="m-3 text-xl" v-if="searchquery.trim() === ''">All Recipies:</div>
   <div class="grid grid-cols-5">
-    <div class="grid grid-cols-3 gap-20 col-span-4 auto-cols-auto">
-      <div v-for="item in recipies.filter(checkIfSearched)" :key="item.id" class="text-right">
+    <div class="col-span-4 flex flex-wrap gap-32 justify-around">
+      <div
+        v-for="item in recipies.filter(checkIfSearched)"
+        :key="item.id"
+        class="text-right w-96 h-96"
+      >
         <RecipeItem :item="item" />
       </div>
     </div>
