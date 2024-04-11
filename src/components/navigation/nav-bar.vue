@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row justify-center items-center gap-10">
+  <div class="flex flex-row justify-center items-center sm:gap-10">
     <template v-if="!isAuthenticated">
       <SignupButton />
       <LoginButton />

@@ -53,19 +53,14 @@ export default {
       }
     "
   />
-  <div class="m-3 text-xl" v-if="searchquery.trim() === ''">All Recipies:</div>
-  <div class="grid grid-cols-5 w-full">
-    <div class="col-span-4 flex flex-wrap gap-32 sm: justify-around">
-      <div
-        v-for="item in recipies.filter(checkIfSearched)"
-        :key="item.id"
-        class="text-right w-96 h-96"
-      >
+  <div class="flex w-full">
+    <div class="w-4/5 flex flex-wrap gap-32 sm: justify-around">
+      <div v-for="item in recipies.filter(checkIfSearched)" :key="item.id" class="text-right">
         <RecipeItem :item="item" />
       </div>
     </div>
     <Sidebar
-      class="px-32 text-right md:w-[500px] w-96"
+      class="p-0 md:text-right w-1/5"
       :recipies_counter="recipies.length"
       :users_counter="users.length"
       :latest_user="users[users.length - 1]?.username"

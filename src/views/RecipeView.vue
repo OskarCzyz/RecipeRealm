@@ -49,7 +49,7 @@ export default {
 </script>
 <template>
   <NavBar class="Header" :login="login" />
-  <div class="col-span-4 flex flex-col items-center justify-center w-104 mx-80">
+  <div class="grid items-center justify-items-center min-h-full min-w-full">
     <h1 class="text-5xl m-10">{{ recipies.Name }}</h1>
     <div class="flex justify-content-center items-center">
       <i>{{ author.username }}</i>

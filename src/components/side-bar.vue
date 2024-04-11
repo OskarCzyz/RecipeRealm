@@ -11,7 +11,7 @@ export default {
 <template>
   <div>
     <div class="latest"></div>
-    <p class="rounded border-2 border-sky-500 bg-white text-left p-5">
+    <p class="rounded border-2 border-sky-500 bg-white text-left p-5 float-left md:float-right m-2">
       Forum statisics<br />
       Recipies: {{ recipies_counter }}<br />
       Members: {{ users_counter }}<br />

@@ -134,14 +134,14 @@ export default {
 
 <template>
   <div
-    class="max-w-full z-10 rounded-t-lg p-20 bg-cover h-80 text-right hover:scale-105 transition cursor-pointer"
+    class="w-[280px] z-10 rounded-t-lg p-20 bg-cover h-80 text-right hover:scale-105 transition cursor-pointer"
     :style="{
       'background-image':
         'url(https://platypus-evolving-smoothly.ngrok-free.app/assets/' + item.Image + ')'
     }"
     @click="showRecipe(item.id)"
   ></div>
-  <div class="z-20 flex justify-between h-36 mt-3">
+  <div class="z-20 flex justify-between w-[280px] mt-3">
     <div class="z-20 flex justfiy-center">
       <i @click="handleLike" :class="isLiked" class="fas fa-heart fa-3x transition duration-500"
         >&nbsp;{{ like_amount }}</i
