@@ -134,7 +134,7 @@ export default {
 
 <template>
   <div
-    class="z-10 rounded-t-lg p-20 bg-cover h-80 text-right hover:scale-105 transition cursor-pointer"
+    class="max-w-full z-10 rounded-t-lg p-20 bg-cover h-80 text-right hover:scale-105 transition cursor-pointer"
     :style="{
       'background-image':
         'url(https://platypus-evolving-smoothly.ngrok-free.app/assets/' + item.Image + ')'

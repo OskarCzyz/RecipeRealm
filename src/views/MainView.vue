@@ -46,6 +46,7 @@ export default {
 
 <template>
   <NavBar
+    class="min-w-full"
     @search="
       (query) => {
         searchquery = query.toLowerCase()
@@ -53,8 +54,8 @@ export default {
     "
   />
   <div class="m-3 text-xl" v-if="searchquery.trim() === ''">All Recipies:</div>
-  <div class="grid grid-cols-5">
-    <div class="col-span-4 flex flex-wrap gap-32 justify-around">
+  <div class="grid grid-cols-5 w-full">
+    <div class="col-span-4 flex flex-wrap gap-32 sm: justify-around">
       <div
         v-for="item in recipies.filter(checkIfSearched)"
         :key="item.id"
@@ -64,7 +65,7 @@ export default {
       </div>
     </div>
     <Sidebar
-      class="px-32 text-right w-[500px]"
+      class="px-32 text-right md:w-[500px] w-96"
       :recipies_counter="recipies.length"
       :users_counter="users.length"
       :latest_user="users[users.length - 1]?.username"

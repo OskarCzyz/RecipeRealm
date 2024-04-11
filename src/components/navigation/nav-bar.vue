@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row justify-center items-center gap-20">
+  <div class="flex flex-row justify-center items-center gap-10">
     <template v-if="!isAuthenticated">
       <SignupButton />
       <LoginButton />
@@ -7,7 +7,7 @@
     <template v-if="isAuthenticated">
       <router-link to="/add-recipe">Add Recipe</router-link>
       <LogoutButton />
-      <img alt="profilepic" :src="user.picture" class="rounded-full w-16 h-16" />
+      <img alt="profilepic" :src="user.picture" class="rounded-full min-w-16 min-h-16 w-16 h-16" />
     </template>
   </div>
 </template>
