@@ -1,3 +1,3 @@
 export default {
-  directus_hostname: 'https://wbaclppqpl.loclx.io/'
+  directus_hostname: 'https://4dgpqvtsbb.loclx.io/'
 }
