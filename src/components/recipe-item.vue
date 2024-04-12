@@ -1,7 +1,7 @@
 <script>
 import { createDirectus, rest, readItems, createItem, deleteItem } from '@directus/sdk'
 import { useAuth0 } from '@auth0/auth0-vue'
-const client = createDirectus('https://platypus-evolving-smoothly.ngrok-free.app/').with(rest())
+const client = createDirectus('https://p6hmtsst0q.loclx.io/').with(rest())
 export default {
   data() {
     return {
@@ -139,8 +139,7 @@ export default {
   <div
     class="w-[280px] z-10 rounded-t-lg p-20 bg-cover h-80 text-right hover:scale-105 transition cursor-pointer"
     :style="{
-      'background-image':
-        'url(https://platypus-evolving-smoothly.ngrok-free.app/assets/' + item.Image + ')'
+      'background-image': 'url(https://p6hmtsst0q.loclx.io/assets/' + item.Image + ')'
     }"
     @click="showRecipe(item.id)"
   ></div>

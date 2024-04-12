@@ -2,7 +2,7 @@
 import NavBar from '@/components/header-navigation.vue'
 import { createDirectus, rest, readItems } from '@directus/sdk'
 
-const client = createDirectus('https://platypus-evolving-smoothly.ngrok-free.app/').with(rest())
+const client = createDirectus('https://p6hmtsst0q.loclx.io/').with(rest())
 
 export default {
   props: ['id'],
@@ -57,7 +57,7 @@ export default {
     </div>
     <img
       class="scale-95 h-96 max-h-96 rounded"
-      :src="'https://platypus-evolving-smoothly.ngrok-free.app/assets/' + recipies.Image"
+      :src="'https://p6hmtsst0q.loclx.io/assets/' + recipies.Image"
       alt="food image"
     />
     <p>Servings: {{ recipies.Servings }}</p>

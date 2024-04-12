@@ -4,7 +4,7 @@ import { createDirectus, rest, readItems, createItem, uploadFiles } from '@direc
 import router from '@/router'
 import { useAuth0 } from '@auth0/auth0-vue'
 
-const directusclient = createDirectus('https://platypus-evolving-smoothly.ngrok-free.app/').with(rest())
+const directusclient = createDirectus('https://p6hmtsst0q.loclx.io/').with(rest())
 
 export default {
   data() {
