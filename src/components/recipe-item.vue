@@ -15,8 +15,7 @@ export default {
       isLiked: '',
       buffer: false,
       changed: false,
-      config: config,
-      addedUser: false
+      config: config
     }
   },
   async mounted() {
@@ -40,7 +39,6 @@ export default {
 
     this.isLiked = this.checkIfIsLiked(this.item) ? 'text-rose-600' : 'text-gray-400'
     this.buffer = this.checkIfIsLiked(this.item)
-    this.checkIfNewUserSignedIn()
   },
   unmounted() {
     if (this.changed && this.original_like_amount !== this.like_amount) {
@@ -90,27 +88,6 @@ export default {
         })
       })
       return isLiked
-    },
-    checkIfNewUserSignedIn() {
-      if (this.isAuthenticated && !this.addedUser) {
-        let isInDatabase = false
-        this.users.forEach((element) => {
-          if (element.sub == this.user.sub) {
-            isInDatabase = true
-          }
-        })
-        if (!isInDatabase) {
-          console.log('adding new user to databse')
-          client.request(
-            createItem('Users', {
-              username: this.user.nickname,
-              sub: this.user.sub,
-              picture: this.user.picture
-            })
-          )
-          this.addedUser = true
-        }
-      }
     },
     currentUserId() {
       if (!this.isAuthenticated) return -1

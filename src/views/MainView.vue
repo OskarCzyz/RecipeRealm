@@ -1,7 +1,7 @@
 <script>
 import NavBar from '@/components/header-navigation.vue'
 import Sidebar from '@/components/side-bar.vue'
-import { createDirectus, rest, readItems } from '@directus/sdk'
+import { createDirectus, rest, readItems, createItem } from '@directus/sdk'
 import { useAuth0 } from '@auth0/auth0-vue'
 import RecipeItem from '@/components/recipe-item.vue'
 import config from '../config.js'
@@ -37,10 +37,31 @@ export default {
         fields: ['id', 'username', 'sub']
       })
     )
+    this.checkIfNewUserSignedIn()
   },
   methods: {
     checkIfSearched(item) {
       return item.Name.toLowerCase().includes(this.searchquery)
+    },
+    checkIfNewUserSignedIn() {
+      if (this.isAuthenticated) {
+        let isInDatabase = false
+        this.users.forEach((element) => {
+          if (element.sub == this.user.sub) {
+            isInDatabase = true
+          }
+        })
+        if (!isInDatabase) {
+          console.log('adding new user to databse')
+          client.request(
+            createItem('Users', {
+              username: this.user.nickname,
+              sub: this.user.sub,
+              picture: this.user.picture
+            })
+          )
+        }
+      }
     }
   }
 }
