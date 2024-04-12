@@ -9,6 +9,7 @@ export default {
       recipies_users: [],
       users: [],
       like_amount: 0,
+      original_like_amount: 0,
       isLiked: '',
       buffer: false,
       changed: false
@@ -31,12 +32,14 @@ export default {
       })
     )
     this.like_amount = this.item.likes.length
+    this.original_like_amount = this.item.likes.length
+
     this.isLiked = this.checkIfIsLiked(this.item) ? 'text-rose-600' : 'text-gray-400'
     this.buffer = this.checkIfIsLiked(this.item)
     this.checkIfNewUserSignedIn()
   },
   unmounted() {
-    if (this.changed) {
+    if (this.changed && this.original_like_amount !== this.like_amount) {
       if (this.buffer) {
         client.request(
           createItem('Recipies_Users', {
