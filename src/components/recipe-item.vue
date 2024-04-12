@@ -15,7 +15,8 @@ export default {
       isLiked: '',
       buffer: false,
       changed: false,
-      config: config
+      config: config,
+      addedUser: false
     }
   },
   async mounted() {
@@ -91,7 +92,7 @@ export default {
       return isLiked
     },
     checkIfNewUserSignedIn() {
-      if (this.isAuthenticated) {
+      if (this.isAuthenticated && !this.addedUser) {
         let isInDatabase = false
         this.users.forEach((element) => {
           if (element.sub == this.user.sub) {
@@ -107,6 +108,7 @@ export default {
               picture: this.user.picture
             })
           )
+          this.addedUser = true
         }
       }
     },
