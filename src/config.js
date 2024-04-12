@@ -1,3 +1,3 @@
 export default {
-  directus_hostname: 'https://4gtopurtix.loclx.io/'
+  directus_hostname: 'https://wjyxriqmvn.loclx.io/'
 }
