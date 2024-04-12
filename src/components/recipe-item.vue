@@ -1,7 +1,9 @@
 <script>
 import { createDirectus, rest, readItems, createItem, deleteItem } from '@directus/sdk'
 import { useAuth0 } from '@auth0/auth0-vue'
-const client = createDirectus('https://p6hmtsst0q.loclx.io/').with(rest())
+import config from '../config.js'
+
+const client = createDirectus(config.directus_hostname).with(rest())
 export default {
   data() {
     return {
@@ -12,7 +14,8 @@ export default {
       original_like_amount: 0,
       isLiked: '',
       buffer: false,
-      changed: false
+      changed: false,
+      config: config
     }
   },
   async mounted() {
@@ -108,6 +111,7 @@ export default {
       }
     },
     currentUserId() {
+      if (!this.isAuthenticated) return -1
       let id = -1
       this.users.forEach((element) => {
         if (element.sub == this.user.sub) id = element.id
@@ -139,7 +143,7 @@ export default {
   <div
     class="w-[280px] z-10 rounded-t-lg p-20 bg-cover h-80 text-right hover:scale-105 transition cursor-pointer"
     :style="{
-      'background-image': 'url(https://p6hmtsst0q.loclx.io/assets/' + item.Image + ')'
+      'background-image': 'url(' + config.directus_hostname + 'assets/' + item.Image + ')'
     }"
     @click="showRecipe(item.id)"
   ></div>

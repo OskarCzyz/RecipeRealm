@@ -4,7 +4,9 @@ import Sidebar from '@/components/side-bar.vue'
 import { createDirectus, rest, readItems } from '@directus/sdk'
 import { useAuth0 } from '@auth0/auth0-vue'
 import RecipeItem from '@/components/recipe-item.vue'
-const client = createDirectus('https://p6hmtsst0q.loclx.io/').with(rest())
+import config from '../config.js'
+
+const client = createDirectus(config.directus_hostname).with(rest())
 
 export default {
   data() {

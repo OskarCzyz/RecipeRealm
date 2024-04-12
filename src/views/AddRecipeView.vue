@@ -3,8 +3,9 @@ import NavBar from '@/components/header-navigation.vue'
 import { createDirectus, rest, readItems, createItem, uploadFiles } from '@directus/sdk'
 import router from '@/router'
 import { useAuth0 } from '@auth0/auth0-vue'
+import config from '../config.js'
 
-const directusclient = createDirectus('https://p6hmtsst0q.loclx.io/').with(rest())
+const directusclient = createDirectus(config.directus_hostname).with(rest())
 
 export default {
   data() {

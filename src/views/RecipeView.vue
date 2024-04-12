@@ -1,8 +1,9 @@
 <script>
 import NavBar from '@/components/header-navigation.vue'
 import { createDirectus, rest, readItems } from '@directus/sdk'
+import config from '../config.js'
 
-const client = createDirectus('https://p6hmtsst0q.loclx.io/').with(rest())
+const client = createDirectus(config.directus_hostname).with(rest())
 
 export default {
   props: ['id'],
@@ -14,7 +15,8 @@ export default {
       author: {
         username: '',
         picture: ''
-      }
+      },
+      config: config
     }
   },
   components: {
@@ -57,7 +59,7 @@ export default {
     </div>
     <img
       class="scale-95 h-96 max-h-96 rounded"
-      :src="'https://p6hmtsst0q.loclx.io/assets/' + recipies.Image"
+      :src="config.directus_hostname + 'assets/' + recipies.Image"
       alt="food image"
     />
     <p>Servings: {{ recipies.Servings }}</p>
